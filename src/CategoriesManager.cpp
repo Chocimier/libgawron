@@ -7,34 +7,10 @@
 namespace gawron
 {
 
-CategoriesManager::CategoriesManager(const std::string &path)
+CategoriesManager::CategoriesManager(const Loader &loader):
+	mCategoryValues(loader.categories()),
+	mNumericalCategories(loader.numericalCategories())
 {
-	mCategoryValues = {
-		{ ParameterValue{"orc"},
-			{
-				{"rodzaj", CategoryValue{"mos"}}
-		 	}
-		},
-		{ ParameterValue{"vyvern"},
-			{
-				{"rodzaj", CategoryValue{"ż"}}
-		 	}
-		},
-		{ ParameterValue{"kopytko"},
-			{
-				{"rodzaj", CategoryValue{"n"}}
-		 	}
-		}
-	};
-		mNumericalCategories = {
-			{"liczba", {
-				NumericalCase{"lz", "0"},
-				{"lp", "1"},
-				{"lmn", "100n+12,100n+13,100n+14"},
-				{"lps", "10n+2,10n+3,10n+4"},
-				{"lmn", "any"}
-			}}
-		};
 }
 
 CategoryList CategoriesManager::categories(const CategoryDemandList &categoriesDemand, const Parameters &parameters)

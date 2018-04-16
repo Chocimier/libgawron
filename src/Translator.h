@@ -7,6 +7,7 @@
 #include "CategoriesManager.h"
 #include "Filler.h"
 #include "FormsManager.h"
+#include "Loader.h"
 #include "Message.h"
 
 namespace gawron
@@ -15,7 +16,7 @@ namespace gawron
 class Translator
 {
 public:
-	Translator(const std::string &file);
+	Translator(const Loader &loader);
 	std::string translate(const std::string &message_id, const Parameters &parameters);
 
 private:

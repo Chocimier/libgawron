@@ -1,0 +1,166 @@
+{
+	"messages":[
+		{
+			"id": "{creatures} arrived.",
+			"categories": [
+				{
+					"parameter": "creatures",
+					"category": "rodzaj"
+				}
+			],
+			"sentences": [
+				{
+					"fits": ["mos"],
+					"pattern": "Przybył {}",
+					"forms": [["creatures", "MP"]]
+				},
+				{
+					"fits": ["ż"],
+					"pattern": "Przybyła {}",
+					"forms": [["creatures", "MP"]]
+				},
+				{
+					"fits": ["n"],
+					"pattern": "Przybyło {}",
+					"forms": [["creatures", "MP"]]
+				}
+			]
+		},
+		{
+			"id": "{n} {creatures} arrived.",
+			"categories": [
+				{
+					"parameter": "creatures",
+					"category": "rodzaj"
+				},
+				{
+					"parameter": "n",
+					"category": "number"
+				}
+			],
+			"sentences": [
+				{
+					"fits": ["mos", "lz"],
+					"pattern": "{} nie przybyli",
+					"forms": [["creatures", "MMn"]]
+				},
+				{
+					"fits": ["ż", "lz"],
+					"pattern": "{} nie przybyły",
+					"forms": [["creatures", "MMn"]]
+				},
+				{
+					"fits": ["n", "lz"],
+					"pattern": "{} nie przybyły",
+					"forms": [["creatures", "MMn"]]
+				},
+				{
+					"fits": ["mos", "lp"],
+					"pattern": "Przybył {}",
+					"forms": [["creatures", "MP"]]
+				},
+				{
+					"fits": ["ż", "lp"],
+					"pattern": "Przybyła {}",
+					"forms": [["creatures", "MP"]]
+				},
+				{
+					"fits": ["n", "lp"],
+					"pattern": "Przybyło {}",
+					"forms": [["creatures", "MP"]]
+				},
+				{
+					"fits": ["mos", "lps"],
+					"pattern": "Przybyli {} {}",
+					"forms": [["n", ""], ["creatures", "MMn"]]
+				},
+				{
+					"fits": ["ż", "lps"],
+					"pattern": "Przybyły {} {}",
+					"forms": [["n", ""], ["creatures", "MMn"]]
+				},
+				{
+					"fits": ["n", "lps"],
+					"pattern": "Przybyły {} {}",
+					"forms": [["n", ""], ["creatures", "MMn"]]
+				},
+				{
+					"fits": ["mos", "lmn"],
+					"pattern": "Przybyło {} {}",
+					"forms": [["n", ""], ["creatures", "DMn"]]
+				},
+				{
+					"fits": ["ż", "lmn"],
+					"pattern": "Przybyło {} {}",
+					"forms": [["n", ""], ["creatures", "DMn"]]
+				},
+				{
+					"fits": ["n", "lmn"],
+					"pattern": "Przybyło {} {}",
+					"forms": [["n", ""], ["creatures", "DMn"]]
+				}
+			]
+		},
+		{
+			"id": "There are {n} {creatures}.",
+			"categories": [
+				{
+					"parameter": "creatures",
+					"category": "rodzaj"
+				},
+				{
+					"parameter": "n",
+					"category": "number"
+				}
+			],
+			"sentences": [
+				{
+					"fits": ["mos", "lps"],
+					"pattern": "Jest {} {}",
+					"forms": [["n", ""], ["creatures", "MMn"]]
+				}
+			]
+		}
+	],
+	"categories": {
+		"entities": {
+			"orc": {
+				"rodzaj": "mos"
+			},
+			"vyvern": {
+				"rodzaj": "ż"
+			},
+			"kopytko": {
+				"rodzaj": "n"
+			}
+		},
+		"numerical": {
+			"number": [
+				{"match": "0", "value": "lz"},
+				{"match": "1", "value": "lp"},
+				{"match": "100n+12,100n+13,100n+14", "value": "lmn"},
+				{"match": "10n+2,10n+3,10n+4", "value": "lps"},
+				{"match": "any", "value": "lmn"}
+			]
+		}
+	},
+	"forms": {
+		"entities": {
+			"orc": {
+				"MP": "ork",
+				"MMn": "orkowie",
+				"DMn": "orków"
+			},
+			"vyvern": {
+				"MP": "wiwerna",
+				"MMn": "wiwerny",
+				"DMn": "wiwern"
+			},
+			"kopytko": {
+				"MP": "kopytko",
+				"MMn": "kopytka",
+				"DMn": "kopytek"
+			}
+		}
+	}
+}

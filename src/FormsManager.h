@@ -6,6 +6,7 @@
 
 #include "Form.h"
 #include "FormDemand.h"
+#include "Loader.h"
 #include "Parameter.h"
 
 namespace gawron
@@ -14,7 +15,7 @@ namespace gawron
 class FormsManager
 {
 public:
-	FormsManager(const std::string &file);
+	FormsManager(const Loader &loader);
 
 	FormList forms(const FormDemandList &formsDemand, const Parameters &parameters);
 

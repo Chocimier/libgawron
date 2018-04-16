@@ -3,25 +3,9 @@
 namespace gawron
 {
 
-FormsManager::FormsManager(const std::string &file)
+FormsManager::FormsManager(const Loader &loader):
+	mForms(loader.forms())
 {
-	mForms = {
-		{{"orc"}, {
-			 { "MP", "ork" },
-			 { "MMn", "orkowie" },
-			 { "DMn", "orków" }
-		 }},
-		{{"vyvern"}, {
-			{"MP", "wiwerna"},
-			{"MMn", "wiwerny"},
-			{"DMn", "wiwern"}
-		}},
-		{{"kopytko"}, {
-			{"MP", "kopytko"},
-			{"MMn", "kopytka"},
-			{"DMn", "kopytek"}
-		}}
-	};
 }
 
 FormList FormsManager::forms(const FormDemandList &formsDemand, const Parameters &parameters)

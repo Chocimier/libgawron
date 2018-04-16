@@ -11,6 +11,7 @@ set(project_src
 	src/Form.cpp
 	src/FormDemand.cpp
 	src/FormsManager.cpp
+	src/JsonLoader.cpp
 	src/Message.cpp
 	src/NumericalCase.cpp
 	src/Parameter.cpp
@@ -19,6 +20,7 @@ set(project_src
 )
 
 include_directories(src)
+include_directories(SYSTEM thirdparty)
 
 add_library(${project_name} SHARED ${project_src})
 set_property(TARGET ${project_name} PROPERTY CXX_STANDARD 11)
