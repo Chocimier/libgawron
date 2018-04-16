@@ -8,10 +8,10 @@ namespace gawron
 {
 
 Translator::Translator(const Loader &loader):
+	mMessages(loader.messages()),
 	mCategoriesManager(loader),
 	mFormsManager(loader)
 {
-	mMessages = loader.messages();
 }
 
 std::string Translator::translate(const std::string &message_id, const Parameters &parameters)

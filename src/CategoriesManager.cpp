@@ -1,5 +1,6 @@
 #include "CategoriesManager.h"
 
+#include <cassert>
 #include <string>
 
 #include "CategoryDemand.h"
@@ -42,6 +43,8 @@ CategoryValue CategoriesManager::numericalCategory(const Category &category, con
 			return numCase.value();
 		}
 	}
+	assert(false);
+	return "";
 }
 
 }

@@ -16,7 +16,7 @@ namespace gawron
 class Translator
 {
 public:
-	Translator(const Loader &loader);
+	explicit Translator(const Loader &loader);
 	std::string translate(const std::string &message_id, const Parameters &parameters);
 
 private:

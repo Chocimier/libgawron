@@ -13,7 +13,7 @@ namespace gawron
 class FormDemand
 {
 public:
-	FormDemand(const std::string &parameterName, const std::string &formName);
+	FormDemand(const ParameterName &parameterName, const FormName &formName);
 
 	FormName formName() const;
 	ParameterName parameterName() const;

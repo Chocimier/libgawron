@@ -11,7 +11,7 @@ namespace gawron
 class JsonLoader : public Loader
 {
 public:
-	JsonLoader(const std::string &path);
+	explicit JsonLoader(const std::string &path);
 
 	std::map<std::string,Message> messages() const override;
 	std::map<ParameterValue,std::map<Category,CategoryValue>> categories() const override;

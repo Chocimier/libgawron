@@ -12,7 +12,7 @@ namespace gawron
 class CategoryDemand
 {
 public:
-	CategoryDemand(const Category category, const ParameterName &parameterName);
+	CategoryDemand(const Category &category, const ParameterName &parameterName);
 
 	Category category() const;
 	ParameterName parameterName() const;

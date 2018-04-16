@@ -3,7 +3,7 @@
 namespace gawron
 {
 
-CategoryDemand::CategoryDemand(const Category category, const ParameterName &parameterName):
+CategoryDemand::CategoryDemand(const Category &category, const ParameterName &parameterName):
     mCategory(category),
     mParameterName(parameterName)
 {

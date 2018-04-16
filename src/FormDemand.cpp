@@ -3,7 +3,7 @@
 namespace gawron
 {
 
-FormDemand::FormDemand(const std::string &parameterName, const std::string &formName):
+FormDemand::FormDemand(const ParameterName &parameterName, const FormName &formName):
     mFormName(formName),
     mParameterName(parameterName)
 {

@@ -12,8 +12,9 @@ int main(int argc, char **argv)
 	}
 	std::vector<std::string> creatures = {"orc", "vyvern", "kopytko"};
 	std::vector<int> counts = {0, 1, 2, 12, 102, 5};
-	for (int n: counts){
-	gawron::Translator t = gawron::JsonLoader(argv[1]);
+	gawron::Translator t(gawron::JsonLoader{argv[1]});
+	for (int n: counts)
+	{
 		for (std::string &creature: creatures)
 		{
 			std::string message = t.translate("{n} {creatures} arrived.", {

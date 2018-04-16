@@ -4,8 +4,8 @@ namespace gawron
 {
 
 Message::Message(const std::vector<std::pair<CategoryValueList,Sentence>> &sentences, const CategoryDemandList &categoriesDemand):
-    mSentences(sentences),
-    mCategoryDemandList(categoriesDemand)
+    mCategoryDemandList(categoriesDemand),
+    mSentences(sentences)
 {
 }
 

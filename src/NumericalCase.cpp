@@ -45,13 +45,17 @@ std::function<bool(long long)> NumericalCase::conditionBuilder(const std::string
 		return [specified](long long n){return n == specified;};
 	}
 
-	static const std::basic_regex<std::remove_reference<decltype(condition)>::type::value_type> modularRule(R"-((\d+)n(?:\+(\d+))?)-");
-	std::match_results<std::remove_reference<decltype(condition)>::type::const_iterator> match;
+	static const std::basic_regex<char> modularRule(R"-((\d+)n(?:\+(\d+))?)-");
+	std::match_results<std::string::const_iterator> match;
 	bool matches = std::regex_match(condition, match, modularRule);
 	if (matches)
 	{
 		long long period = std::stoll(match[1]);
-		long long remainder = std::stoll(match[2]);
+		long long remainder = 0;
+		if (match[2].length() > 0)
+		{
+			remainder = std::stoll(match[2]);
+		}
 		return [period, remainder](long long n){return (n % period) == remainder;};
 	}
 
