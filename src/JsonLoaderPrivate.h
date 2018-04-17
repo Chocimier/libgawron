@@ -17,29 +17,33 @@
  * along with libgawron. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef JSONLOADER_H
-#define JSONLOADER_H
+#ifndef JSONLOADERPRIVATE_H
+#define JSONLOADERPRIVATE_H
+
+#include <nlohmann/json.hpp>
 
 #include "Loader.h"
 
 namespace gawron
 {
 
-class JsonLoaderPrivate;
-
-class JsonLoader : public Loader
+class JsonLoaderPrivate : public Loader
 {
 public:
-	explicit JsonLoader(const std::string &path);
-	~JsonLoader();
+	explicit JsonLoaderPrivate(const std::string &path);
 
 	std::map<std::string,Message> messages() const override;
 	std::map<ParameterValue,std::map<Category,CategoryValue>> categories() const override;
 	std::map<Category,std::vector<NumericalCase>> numericalCategories() const override;
-	std::map<ParameterValue, std::map<FormName,FormValue> > forms() const override;
+	std::map<ParameterValue,std::map<FormName,FormValue>> forms() const override;
 
 private:
-	JsonLoaderPrivate *pImpl;
+	std::pair<std::string,Message> readMessage(const nlohmann::json &json) const;
+	std::pair<CategoryValueList,Sentence> readSentence(const nlohmann::json &json) const;
+	FormDemand readFormDemand(const nlohmann::json &json) const;
+	CategoryDemand readCategoryDemand(const nlohmann::json &json) const;
+
+	nlohmann::json mJson;
 };
 
 }

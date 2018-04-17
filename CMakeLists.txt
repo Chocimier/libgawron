@@ -10,6 +10,7 @@ set(project_src
 	src/FormDemand.cpp
 	src/FormsManager.cpp
 	src/JsonLoader.cpp
+	src/JsonLoaderPrivate.cpp
 	src/Message.cpp
 	src/NumericalCase.cpp
 	src/Parameter.cpp

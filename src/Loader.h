@@ -31,6 +31,7 @@ namespace gawron
 class Loader
 {
 public:
+	virtual ~Loader(){};
 	virtual std::map<std::string,Message> messages() const = 0;
 	virtual std::map<ParameterValue,std::map<Category,CategoryValue>> categories() const = 0;
 	virtual std::map<Category,std::vector<NumericalCase>> numericalCategories() const = 0;
