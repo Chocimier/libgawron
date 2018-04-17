@@ -1,0 +1,90 @@
+{
+	"messages":[
+		{
+			"id": "{figure} {color} {animal}",
+			"categories": [
+				{
+					"parameter": "animal",
+					"category": "rodzaj"
+				}
+			],
+			"sentences": [
+				{
+					"fits": ["m"],
+					"pattern": "ein {}er {}er {}",
+					"forms": [["color", "n"],["figure", "n"],["animal", "MP"]]
+				},
+				{
+					"fits": ["f"],
+					"pattern": "eine {}e {}e {}",
+					"forms": [["color", "n"],["figure", "n"],["animal", "MP"]]
+				},
+				{
+					"fits": ["n"],
+					"pattern": "ein {}es {}es {}",
+					"forms": [["color", "n"],["figure", "n"],["animal", "MP"]]
+				}
+			]
+		}
+	],
+	"categories": {
+		"entities": {
+			"cat": {
+				"rodzaj": "f"
+			},
+			"dog": {
+				"rodzaj": "m"
+			},
+			"cow": {
+				"rodzaj": "f"
+			},
+			"pig": {
+				"rodzaj": "n"
+			}
+		},
+		"numerical": {
+		}
+	},
+	"forms": {
+		"entities": {
+			"dog": {
+				"MP": "Hund"
+			},
+			"cat": {
+				"MP": "Katze"
+			},
+			"cow": {
+				"MP": "Kuh"
+			},
+			"pig": {
+				"MP": "Schwein"
+			},
+			"gray": {
+				"n": "grau"
+			},
+			"black": {
+				"n": "schwarz"
+			},
+			"brown": {
+				"n": "braun"
+			},
+			"white": {
+				"n": "weiß"
+			},
+			"tall": {
+				"n": "hoch"
+			},
+			"short": {
+				"n": "niedrig"
+			},
+			"skinny": {
+				"n": "dünn"
+			},
+			"fat": {
+				"n": "dick"
+			}
+		},
+		"numerical": {
+		}
+	}
+}

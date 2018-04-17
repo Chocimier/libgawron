@@ -1,0 +1,106 @@
+{
+	"messages":[
+		{
+			"id": "{figure} {color} {animal}",
+			"categories": [
+				{
+					"parameter": "animal",
+					"category": "rodzaj"
+				}
+			],
+			"sentences": [
+				{
+					"fits": ["m"],
+					"pattern": "{} {} {}",
+					"forms": [["color", "m"],["figure", "m"],["animal", "MP"]]
+				},
+				{
+					"fits": ["ż"],
+					"pattern": "{} {} {}",
+					"forms": [["color", "ż"],["figure", "ż"],["animal", "MP"]]
+				},
+				{
+					"fits": ["n"],
+					"pattern": "{} {} {}",
+					"forms": [["color", "n"],["figure", "n"],["animal", "MP"]]
+				}
+			]
+		}
+	],
+	"categories": {
+		"entities": {
+			"cat": {
+				"rodzaj": "m"
+			},
+			"dog": {
+				"rodzaj": "m"
+			},
+			"cow": {
+				"rodzaj": "ż"
+			},
+			"pig": {
+				"rodzaj": "ż"
+			}
+		},
+		"numerical": {
+		}
+	},
+	"forms": {
+		"entities": {
+			"dog": {
+				"MP": "pies"
+			},
+			"cat": {
+				"MP": "kot"
+			},
+			"cow": {
+				"MP": "krowa"
+			},
+			"pig": {
+				"MP": "świnia"
+			},
+			"gray": {
+				"m": "szary",
+				"ż": "szara",
+				"n": "szare"
+			},
+			"black": {
+				"m": "czarny",
+				"ż": "czarna",
+				"n": "czarne"
+			},
+			"brown": {
+				"m": "brązowy",
+				"ż": "brązowa",
+				"n": "brązowe"
+			},
+			"white": {
+				"m": "biały",
+				"ż": "biała",
+				"n": "białe"
+			},
+			"tall": {
+				"m": "wysoki",
+				"ż": "wysoka",
+				"n": "wysokie"
+			},
+			"short": {
+				"m": "niski",
+				"ż": "niska",
+				"n": "niskie"
+			},
+			"skinny": {
+				"m": "chudy",
+				"ż": "chuda",
+				"n": "chude"
+			},
+			"fat": {
+				"m": "gruby",
+				"ż": "gruba",
+				"n": "grube"
+			}
+		},
+		"numerical": {
+		}
+	}
+}

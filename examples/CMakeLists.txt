@@ -1,4 +1,11 @@
-add_executable(demo main.cpp)
-set_property(TARGET demo PROPERTY CXX_STANDARD 11)
+list(APPEND examples
+	arrive
+	animals
+	vcmi
+)
 
-target_link_libraries(demo LINK_PUBLIC gawron)
+foreach(example ${examples})
+	add_executable(${example} ${example}.cpp)
+	set_property(TARGET ${example} PROPERTY CXX_STANDARD 11)
+	target_link_libraries(${example} LINK_PUBLIC gawron)
+endforeach(example)

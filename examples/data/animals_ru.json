@@ -1,0 +1,106 @@
+{
+	"messages":[
+		{
+			"id": "{figure} {color} {animal}",
+			"categories": [
+				{
+					"parameter": "animal",
+					"category": "rodzaj"
+				}
+			],
+			"sentences": [
+				{
+					"fits": ["m"],
+					"pattern": "{} {} {}",
+					"forms": [["color", "m"],["figure", "m"],["animal", "MP"]]
+				},
+				{
+					"fits": ["f"],
+					"pattern": "{} {} {}",
+					"forms": [["color", "f"],["figure", "f"],["animal", "MP"]]
+				},
+				{
+					"fits": ["n"],
+					"pattern": "{} {} {}",
+					"forms": [["color", "n"],["figure", "n"],["animal", "MP"]]
+				}
+			]
+		}
+	],
+	"categories": {
+		"entities": {
+			"cat": {
+				"rodzaj": "m"
+			},
+			"dog": {
+				"rodzaj": "f"
+			},
+			"cow": {
+				"rodzaj": "f"
+			},
+			"pig": {
+				"rodzaj": "f"
+			}
+		},
+		"numerical": {
+		}
+	},
+	"forms": {
+		"entities": {
+			"dog": {
+				"MP": "собака"
+			},
+			"cat": {
+				"MP": "кот"
+			},
+			"cow": {
+				"MP": "корова"
+			},
+			"pig": {
+				"MP": "свиния"
+			},
+			"gray": {
+				"m": "серый",
+				"f": "серая",
+				"n": "серое"
+			},
+			"black": {
+				"m": "чёрный",
+				"f": "чёрная",
+				"n": "чёрное"
+			},
+			"brown": {
+				"m": "коричневый",
+				"f": "коричневая",
+				"n": "коричневое"
+			},
+			"white": {
+				"m": "белый",
+				"f": "белая",
+				"n": "белое"
+			},
+			"tall": {
+				"m": "высокий",
+				"f": "высокая",
+				"n": "высокое"
+			},
+			"short": {
+				"m": "низкий",
+				"f": "низкая",
+				"n": "низкое"
+			},
+			"skinny": {
+				"m": "худой",
+				"f": "худая",
+				"n": "худое"
+			},
+			"fat": {
+				"m": "толстый",
+				"f": "толстая",
+				"n": "толстое"
+			}
+		},
+		"numerical": {
+		}
+	}
+}

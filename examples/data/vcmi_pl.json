@@ -1,0 +1,51 @@
+{
+	"messages":[
+		{
+			"id": "{} hate {}",
+			"categories": [],
+			"sentences": [
+				{
+					"fits": [],
+					"pattern": "{} nienawidzą {}",
+					"forms": [["hater", "MMn"],["hated", "DMn"]]
+				}
+			]
+		}
+	],
+	"categories": {
+		"entities": {},
+		"numerical": {}
+	},
+	"forms": {
+		"entities": {
+			"efreet": {
+				"MMn": "ifryty",
+				"DMn": "ifrytów"
+			},
+			"genie": {
+				"MMn": "dżiny",
+				"DMn": "dżinów"
+			},
+			"angel": {
+				"MMn": "anioły",
+				"DMn": "aniołów"
+			},
+			"devil": {
+				"MMn": "diabły",
+				"DMn": "diabłów"
+			},
+			"gray": {
+				"m": "szary",
+				"ż": "szara",
+				"n": "szare"
+			},
+			"black": {
+				"m": "czarny",
+				"ż": "czarna",
+				"n": "czarne"
+			}
+		},
+		"numerical": {
+		}
+	}
+}

@@ -1,0 +1,61 @@
+{
+	"messages":[
+		{
+			"id": "{figure} {color} {animal}",
+			"categories": [],
+			"sentences": [
+				{
+					"fits": [],
+					"pattern": "a {} {} {}",
+					"forms": [["figure", "n"],["color", "n"],["animal", "n"]]
+				}
+			]
+		}
+	],
+	"categories": {
+		"entities": {},
+		"numerical": {}
+	},
+	"forms": {
+		"entities": {
+			"dog": {
+				"n": "dog"
+			},
+			"cat": {
+				"n": "cat"
+			},
+			"cow": {
+				"n": "cow"
+			},
+			"pig": {
+				"n": "pig"
+			},
+			"gray": {
+				"n": "gray"
+			},
+			"black": {
+				"n": "black"
+			},
+			"brown": {
+				"n": "brown"
+			},
+			"white": {
+				"n": "white"
+			},
+			"tall": {
+				"n": "tall"
+			},
+			"short": {
+				"n": "short"
+			},
+			"skinny": {
+				"n": "skinny"
+			},
+			"fat": {
+				"n": "fat"
+			}
+		},
+		"numerical": {
+		}
+	}
+}
