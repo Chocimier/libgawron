@@ -20,29 +20,28 @@
 #ifndef TRANSLATOR_H
 #define TRANSLATOR_H
 
-#include <map>
+#include <memory>
 #include <string>
 
-#include "CategoriesManager.h"
-#include "Filler.h"
-#include "FormsManager.h"
-#include "Loader.h"
-#include "Message.h"
+#include "Parameter.h"
 
 namespace gawron
 {
+
+class Loader;
+class TranslatorPrivate;
 
 class Translator
 {
 public:
 	explicit Translator(const Loader &loader);
+	Translator(const Translator &translator);
+	~Translator();
+
 	std::string translate(const std::string &message_id, const Parameters &parameters);
 
 private:
-	std::map<std::string, Message> mMessages;
-	CategoriesManager mCategoriesManager;
-	FormsManager mFormsManager;
-	Filler mFiller;
+	std::unique_ptr<TranslatorPrivate> pImpl;
 };
 
 }

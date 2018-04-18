@@ -17,32 +17,35 @@
  * along with libgawron. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "Translator.h"
+#ifndef TRANSLATORPRIVATE_H
+#define TRANSLATORPRIVATE_H
 
+#include <map>
+#include <string>
+
+#include "CategoriesManager.h"
+#include "Filler.h"
+#include "FormsManager.h"
 #include "Loader.h"
-#include "Parameter.h"
-#include "TranslatorPrivate.h"
+#include "Message.h"
 
 namespace gawron
 {
 
-Translator::Translator(const Loader &loader):
-	pImpl(new TranslatorPrivate(loader))
+class TranslatorPrivate
 {
-}
+public:
+	explicit TranslatorPrivate(const Loader &loader);
 
-Translator::Translator(const Translator &translator):
-	pImpl(new TranslatorPrivate(*translator.pImpl))
-{
-}
+	std::string translate(const std::string &message_id, const Parameters &parameters);
 
-Translator::~Translator()
-{
-}
-
-std::string Translator::translate(const std::string &message_id, const Parameters &parameters)
-{
-	return pImpl->translate(message_id, parameters);
-}
+private:
+	std::map<std::string, Message> mMessages;
+	CategoriesManager mCategoriesManager;
+	FormsManager mFormsManager;
+	Filler mFiller;
+};
 
 }
+
+#endif

@@ -15,6 +15,7 @@ set(project_src
 	src/NumericalCase.cpp
 	src/Parameter.cpp
 	src/Sentence.cpp
+	src/TranslatorPrivate.cpp
 	src/Translator.cpp
 )
 
