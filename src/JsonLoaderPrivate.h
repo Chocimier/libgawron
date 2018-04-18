@@ -22,6 +22,9 @@
 
 #include <nlohmann/json.hpp>
 
+#include "CategoryDemand.h"
+#include "Form.h"
+#include "Sentence.h"
 #include "Loader.h"
 
 namespace gawron

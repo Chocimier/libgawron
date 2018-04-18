@@ -23,6 +23,8 @@
 #include <map>
 #include <string>
 
+#include "Form.h"
+#include "FormDemand.h"
 #include "Loader.h"
 
 namespace gawron

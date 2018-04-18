@@ -23,6 +23,9 @@
 #include <map>
 #include <vector>
 
+#include "Category.h"
+#include "CategoryDemand.h"
+#include "NumericalCase.h"
 #include "Loader.h"
 
 namespace gawron

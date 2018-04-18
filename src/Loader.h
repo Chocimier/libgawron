@@ -20,13 +20,19 @@
 #ifndef LOADER_H
 #define LOADER_H
 
-#include <Category.h>
-#include <Message.h>
-#include <NumericalCase.h>
-#include <Parameter.h>
+#include <string>
+#include <vector>
+
+#include "Parameter.h"
 
 namespace gawron
 {
+class Category;
+class CategoryValue;
+class FormName;
+class FormValue;
+class Message;
+class NumericalCase;
 
 class Loader
 {

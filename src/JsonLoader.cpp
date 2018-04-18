@@ -19,6 +19,8 @@
 
 #include "JsonLoader.h"
 
+#include "Message.h"
+#include "NumericalCase.h"
 #include "JsonLoaderPrivate.h"
 
 namespace gawron

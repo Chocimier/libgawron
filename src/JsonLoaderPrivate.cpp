@@ -17,6 +17,8 @@
  * along with libgawron. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "Message.h"
+#include "NumericalCase.h"
 #include "JsonLoaderPrivate.h"
 
 #include <fstream>
