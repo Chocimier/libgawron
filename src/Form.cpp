@@ -17,32 +17,45 @@
  * along with libgawron. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "FormsManager.h"
+#include "Form.h"
 
 namespace gawron
 {
 
-FormsManager::FormsManager(const Loader &loader):
-	mForms(loader.forms())
+FormName::FormName(const std::string &form):
+	mFormName(form)
 {
 }
 
-FormList FormsManager::forms(const FormDemandList &formsDemand, const Parameters &parameters)
+bool operator <(const gawron::FormName &lhs, const gawron::FormName &rhs)
 {
-	FormList result;
-	for (FormDemand demand: formsDemand)
-	{
-		ParameterValue parameter = parameters.at(demand.parameterName());
-		if (parameter.type() == ParameterValue::Type::String)
-		{
-			result.push_back(mForms.at(parameter).at(demand.formName()));
-		}
-		else
-		{
-			result.push_back(FormValue(std::to_string(parameter.number())));
-		}
-	}
-	return result;
+	return lhs.mFormName < rhs.mFormName;
+}
+
+bool operator ==(const gawron::FormName &lhs, const gawron::FormName &rhs)
+{
+	return lhs.mFormName == rhs.mFormName;
+}
+
+FormValue::FormValue(const std::string &form):
+	mFormValue(form)
+{
+}
+
+FormValue::operator std::string() const
+{
+	return mFormValue;
+}
+
+
+bool operator <(const gawron::FormValue &lhs, const gawron::FormValue &rhs)
+{
+	return lhs.mFormValue < rhs.mFormValue;
+}
+
+bool operator ==(const gawron::FormValue &lhs, const gawron::FormValue &rhs)
+{
+	return lhs.mFormValue == rhs.mFormValue;
 }
 
 }

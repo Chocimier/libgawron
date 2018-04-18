@@ -5,8 +5,10 @@ project(${project_name})
 
 set(project_src
 	src/CategoriesManager.cpp
+	src/Category.cpp
 	src/CategoryDemand.cpp
 	src/Filler.cpp
+	src/Form.cpp
 	src/FormDemand.cpp
 	src/FormsManager.cpp
 	src/JsonLoader.cpp

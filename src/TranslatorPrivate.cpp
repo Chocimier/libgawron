@@ -37,7 +37,7 @@ std::string TranslatorPrivate::translate(const std::string &message_id, const Pa
 {
 	Message message = mMessages.at(message_id);
 	CategoryDemandList categoriesDemand = message.categoryDemandList();
-	CategoryList categories = mCategoriesManager.categories(categoriesDemand, parameters);
+	CategoryValueList categories = mCategoriesManager.categories(categoriesDemand, parameters);
 	Sentence sentence = message.selectSentence(categories);
 	FormDemandList formsDemand = sentence.formsDemand();
 	FormList forms = mFormsManager.forms(formsDemand, parameters);

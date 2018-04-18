@@ -45,7 +45,7 @@ std::string Filler::fill(const Sentence &sentence, const FormList &forms)
 		}
 		else
 		{
-			result += forms[formsPosition];
+			result += std::string(forms[formsPosition]);
 			++formsPosition;
 			++i;
 		}

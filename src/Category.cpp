@@ -17,32 +17,38 @@
  * along with libgawron. If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "FormsManager.h"
+#include "Category.h"
 
-namespace gawron
-{
+namespace gawron {
 
-FormsManager::FormsManager(const Loader &loader):
-	mForms(loader.forms())
+CategoryValue::CategoryValue(const std::string &value):
+    mValue(value)
 {
 }
 
-FormList FormsManager::forms(const FormDemandList &formsDemand, const Parameters &parameters)
+bool operator <(const CategoryValue &lhs, const CategoryValue &rhs)
 {
-	FormList result;
-	for (FormDemand demand: formsDemand)
-	{
-		ParameterValue parameter = parameters.at(demand.parameterName());
-		if (parameter.type() == ParameterValue::Type::String)
-		{
-			result.push_back(mForms.at(parameter).at(demand.formName()));
-		}
-		else
-		{
-			result.push_back(FormValue(std::to_string(parameter.number())));
-		}
-	}
-	return result;
+	return lhs.mValue == rhs.mValue;
+}
+
+bool operator ==(const CategoryValue &lhs, const CategoryValue &rhs)
+{
+	return lhs.mValue == rhs.mValue;
+}
+
+Category::Category(const std::string &category):
+    mCategory(category)
+{
+}
+
+bool operator <(const gawron::Category &lhs, const gawron::Category &rhs)
+{
+	return lhs.mCategory < rhs.mCategory;
+}
+
+bool operator ==(const gawron::Category &lhs, const gawron::Category &rhs)
+{
+	return lhs.mCategory == rhs.mCategory;
 }
 
 }

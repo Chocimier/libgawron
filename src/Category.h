@@ -28,9 +28,34 @@
 namespace gawron
 {
 
-using CategoryValue = std::string;
+class CategoryValue
+{
+public:
+	explicit CategoryValue(const std::string &value);
+
+	friend bool operator <(const CategoryValue &lhs, const CategoryValue &rhs);
+	friend bool operator ==(const CategoryValue &lhs, const CategoryValue &rhs);
+
+private:
+	std::string mValue;
+};
+
+
 using CategoryValueList = std::vector<CategoryValue>;
-using Category = std::string;
+
+class Category
+{
+public:
+	explicit Category(const std::string &category);
+
+	friend bool operator <(const Category&lhs, const Category &rhs);
+	friend bool operator ==(const Category&lhs, const Category &rhs);
+
+private:
+	std::string mCategory;
+};
+
+
 using CategoryList = std::vector<Category>;
 
 }

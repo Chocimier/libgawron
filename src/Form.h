@@ -26,8 +26,31 @@
 namespace gawron
 {
 
-using FormName = std::string;
-using FormValue = std::string;
+class FormName
+{
+public:
+	explicit FormName(const std::string &form);
+
+	friend bool operator <(const FormName &lhs, const FormName &rhs);
+	friend bool operator ==(const FormName &lhs, const FormName &rhs);
+
+private:
+	std::string mFormName;
+};
+
+class FormValue
+{
+public:
+	explicit FormValue(const std::string &form);
+
+	explicit operator std::string() const;
+	friend bool operator <(const FormValue &lhs, const FormValue &rhs);
+	friend bool operator ==(const FormValue &lhs, const FormValue &rhs);
+
+private:
+	std::string mFormValue;
+};
+
 using FormList = std::vector<FormValue>;
 
 }

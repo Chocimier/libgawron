@@ -51,7 +51,7 @@ std::map<ParameterValue,std::map<Category,CategoryValue>> JsonLoaderPrivate::cat
 		nlohmann::json categories = eit.value();
 		for (nlohmann::json::iterator cit = categories.begin(); cit != categories.end(); ++cit)
 		{
-			result[{eit.key()}].emplace(cit.key(), cit.value().get<std::string>());
+			result[{eit.key()}].emplace(Category(cit.key()), CategoryValue(cit.value().get<std::string>()));
 		}
 	}
 	return result;
@@ -66,7 +66,7 @@ std::map<Category,std::vector<NumericalCase>> JsonLoaderPrivate::numericalCatego
 		nlohmann::json array = cit.value();
 		for (nlohmann::json::iterator ait = array.begin(); ait != array.end(); ++ait)
 		{
-			result[{cit.key()}].emplace_back((*ait)["value"], (*ait)["match"]);
+			result[Category(cit.key())].emplace_back(CategoryValue((*ait)["value"].get<std::string>()), (*ait)["match"]);
 		}
 	}
 	return result;
@@ -81,7 +81,7 @@ std::map<ParameterValue,std::map<FormName,FormValue>> JsonLoaderPrivate::forms()
 		nlohmann::json categories = eit.value();
 		for (nlohmann::json::iterator fit = categories.begin(); fit != categories.end(); ++fit)
 		{
-			result[{eit.key()}].emplace(fit.key(), fit.value());
+			result[ParameterValue(eit.key())].emplace(FormName(fit.key()), FormValue(fit.value().get<std::string>()));
 		}
 	}
 	return result;
@@ -115,7 +115,13 @@ std::pair<CategoryValueList,Sentence> JsonLoaderPrivate::readSentence(const nloh
 		FormDemand demand = readFormDemand(*it);
 		formsDemand.push_back(demand);
 	}
-	CategoryValueList fits = json["fits"];
+	CategoryValueList fits;
+	nlohmann::json fitsJson = json["fits"];
+	for (nlohmann::json::iterator it = fitsJson.begin(); it != fitsJson.end(); ++it)
+	{
+		CategoryValue value(it->get<std::string>());
+		fits.push_back(value);
+	}
 	std::string pattern = json["pattern"];
 	Sentence sentence(pattern, formsDemand);
 	return {fits, sentence};
@@ -123,15 +129,15 @@ std::pair<CategoryValueList,Sentence> JsonLoaderPrivate::readSentence(const nloh
 
 FormDemand JsonLoaderPrivate::readFormDemand(const nlohmann::json &json) const
 {
-	ParameterName parameter = json[0];
-	FormName form = json[1];
+	ParameterName parameter(json[0].get<std::string>());
+	FormName form(json[1].get<std::string>());
 	return {parameter, form};
 }
 
 CategoryDemand JsonLoaderPrivate::readCategoryDemand(const nlohmann::json &json) const
 {
 	ParameterName parameter = json["parameter"];
-	Category category = json["category"];
+	Category category(json["category"].get<std::string>());
 	return {category, parameter};
 }
 

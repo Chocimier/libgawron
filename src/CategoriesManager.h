@@ -33,7 +33,7 @@ class CategoriesManager
 public:
 	explicit CategoriesManager(const Loader &loader);
 
-	CategoryList categories(const CategoryDemandList &categoriesDemand, const Parameters &parameters);
+	CategoryValueList categories(const CategoryDemandList &categoriesDemand, const Parameters &parameters);
 	CategoryValue numericalCategory(const Category &category, const ParameterValue &parameter);
 
 private:

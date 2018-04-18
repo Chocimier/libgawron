@@ -33,9 +33,9 @@ CategoriesManager::CategoriesManager(const Loader &loader):
 {
 }
 
-CategoryList CategoriesManager::categories(const CategoryDemandList &categoriesDemand, const Parameters &parameters)
+CategoryValueList CategoriesManager::categories(const CategoryDemandList &categoriesDemand, const Parameters &parameters)
 {
-	CategoryList result;
+	CategoryValueList result;
 	for (CategoryDemand demand: categoriesDemand)
 	{
 		ParameterValue parameter = parameters.at(demand.parameterName());
@@ -63,7 +63,7 @@ CategoryValue CategoriesManager::numericalCategory(const Category &category, con
 		}
 	}
 	assert(false);
-	return "";
+	return CategoryValue("");
 }
 
 }
